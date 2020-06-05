@@ -4,7 +4,7 @@ import {useState} from "react";
 
 import {
     AppBar, Button, IconButton,
-    Link,
+    /*Link, */
     List, ListItem, ListItemText, 
     SwipeableDrawer,
     Toolbar, Typography
@@ -14,23 +14,8 @@ import {
 // @ts-ignore 
 var my=myOwn;
 
-type Vinculo = {
-    orden:number
-    vinculo:string
-}
 
-type Publicacion = {
-    titulo:string
-    texto:string
-    formato:string
-    fecha:Date
-    autor:string
-    url:string
-    vinculos:Vinculo[]
-}
-
-
-function AppPrincipalOk(props:{publicaciones:Publicacion[]}){
+function AppPrincipalOk(){
     var [menuOpened, setMenuOpened] = useState(false);
     return <>
         <AppBar position="static">
@@ -102,7 +87,7 @@ class DmCaptureError extends React.Component<
 
 function AppPrincipal(){
     return <DmCaptureError>
-        <AppPrincipalOk publicaciones={publicaciones}/>
+        <AppPrincipalOk/>
     </DmCaptureError>
 }
 
