@@ -10,14 +10,10 @@ import * as MiniTools from 'mini-tools';
 
 import {ProceduresTareasContexto} from "./procedures-tareas-contexto";
 
+import { contextos  } from './table-contextos';
 import { usuarios   } from './table-usuarios';
 
 import {staticConfigYaml} from './def-config';
-
-function json(sql:string, orderby:string){
-    return `COALESCE((SELECT jsonb_agg(to_jsonb(j.*) ORDER BY ${orderby}) from (${sql}) as j),'[]'::jsonb)`
-}
-
 
 export class AppTareasContexto extends AppBackend{
     constructor(){
@@ -44,7 +40,6 @@ export class AppTareasContexto extends AppBackend{
         super.addSchrödingerServices(mainApp, baseUrl);
     }
     addUnloggedServices(mainApp:ExpressPlus, baseUrl:string){
-        var be=this;
         if(baseUrl=='/'){
             baseUrl='';
         }   
@@ -59,6 +54,7 @@ export class AppTareasContexto extends AppBackend{
     }
     getMenu(context:Context):MenuDefinition{
         var menuContent:MenuInfoBase[]=[
+            {menuType:'table', name:'contextos'  },
         ];
         if(context.user && context.user.rol=="admin"){
             menuContent.push(
@@ -98,6 +94,7 @@ export class AppTareasContexto extends AppBackend{
         super.prepareGetTables();
         this.getTableDefinition={
             ... this.getTableDefinition,
+            contextos ,
             usuarios  ,    
         }
     }       
