@@ -9,10 +9,13 @@ export function contextos(_context:TableContext):TableDefinition{
         editable:true,
         fields:[
             {name:'contexto'         , typeName:'text'    , nullable:false  },
-            {name:'nombre'           , typeName:'text'                      },
+            {name:'nombre'           , typeName:'text'    , isName:true     },
             {name:'activo'           , typeName:'boolean' , nullable:false ,defaultValue:true},
             {name:'objetivo'         , typeName:'text'                      },
         ],
         primaryKey:['contexto'],
+        detailTables:[
+            {table:'tareas', fields:['contexto'], abr:'T'}
+        ]
     };
 }

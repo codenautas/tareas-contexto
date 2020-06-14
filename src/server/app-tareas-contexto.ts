@@ -11,6 +11,7 @@ import * as MiniTools from 'mini-tools';
 import {ProceduresTareasContexto} from "./procedures-tareas-contexto";
 
 import { contextos  } from './table-contextos';
+import { tareas     } from './table-tareas';
 import { usuarios   } from './table-usuarios';
 
 import {staticConfigYaml} from './def-config';
@@ -96,6 +97,7 @@ export class AppTareasContexto extends AppBackend{
             ... this.getTableDefinition,
             contextos ,
             usuarios  ,    
+            tareas    ,
         }
     }       
 }
