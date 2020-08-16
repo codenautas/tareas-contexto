@@ -9,7 +9,7 @@ export function tareas(_context:TableContext):TableDefinition{
         editable:true,
         fields:[
             {name:'contexto'         , typeName:'text'                      },
-            {name:'tarea'            , typeName:'bigint'  , sequence:{name:'tarea_seq', firstValue:1}  },
+            {name:'tarea'            , typeName:'bigint'  , nullable:true , editable:false, sequence:{name:'tarea_seq', firstValue:1}  , },
             {name:'nombre'           , typeName:'text'    , isName:true     },
             {name:'pendiente'        , typeName:'boolean' , nullable:false ,defaultValue:true},
             {name:'detalle'          , typeName:'text'                      },

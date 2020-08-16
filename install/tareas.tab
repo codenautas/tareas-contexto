@@ -1,0 +1,3 @@
+contexto|contextos__nombre|tarea|nombre|pendiente|detalle|usuario_destino|usuario_origen
+contexto-tareas|Tareas para el proyectos de contexto-tareas|1|Hacer que el número de tarea no sea editable|true||clark|perry
+contexto-tareas|Tareas para el proyectos de contexto-tareas|2|Cargar algunas tareas de ejemplo|true|Estén en la carpeta /install|clark|perry
