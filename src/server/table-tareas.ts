@@ -13,6 +13,8 @@ export function tareas(_context:TableContext):TableDefinition{
             {name:'nombre'           , typeName:'text'    , isName:true     },
             {name:'pendiente'        , typeName:'boolean' , nullable:false ,defaultValue:true},
             {name:'detalle'          , typeName:'text'                      },
+            {name:'empezada'         , typeName:'boolean'                   },
+            {name:'terminada'        , typeName:'boolean'                   },
             {name:'usuario_destino'  , typeName:'text'                      },
             {name:'usuario_origen'   , typeName:'text'                      },
         ],
